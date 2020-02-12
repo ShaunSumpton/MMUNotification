@@ -32,7 +32,9 @@ namespace MMUNotification
             var UK = application.WorksheetFunction.CountIf(uknot, "UK"); // count uk sends
             var NONUK = application.WorksheetFunction.CountIf(uknot, "Non-UK"); // count nonuk sends
 
-            MailMessage message = new MailMessage("s.sumpton@agnortheast.com", "S.Sumpton@agnortheast.com; s.kent@agnortheast.com; a.granger@agnortheast.com; r.Richardson@agnortheast.com",
+            //r.Richardson@agnortheast.com
+
+            MailMessage message = new MailMessage("s.sumpton@agnortheast.com", "S.Sumpton@agnortheast.com; s.kent@agnortheast.com; a.granger@agnortheast.com",
                 "MMU Data Notification " + DateTime.Now.ToString("dd/MM/yyyy"),
                 "MMU Offer Guide Quantities <br /> <br />" + "Number of UK: " + UK + "<br />" + "Number of Non-UK: " + NONUK + "<br />" + "--------------------------------------");
             message.IsBodyHtml = true;
