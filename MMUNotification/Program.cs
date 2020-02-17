@@ -26,7 +26,7 @@ namespace MMUNotification
             _ = ws.UsedRange.Columns.Count;
             Range last = ws.Cells.SpecialCells(XlCellType.xlCellTypeLastCell, Type.Missing);
             _ = ws.get_Range("A1", last);
-            Range uknot = ws.Columns["Q"]; // column to count UK or NON UK sends
+            Range uknot = ws.Columns["P"]; // column to count UK or NON UK sends
             _ = last.Row;
 
             var UK = application.WorksheetFunction.CountIf(uknot, "UK"); // count uk sends
@@ -34,14 +34,16 @@ namespace MMUNotification
 
             //r.Richardson@agnortheast.com
 
-            MailMessage message = new MailMessage("s.sumpton@agnortheast.com", "S.Sumpton@agnortheast.com; s.kent@agnortheast.com; a.granger@agnortheast.com",
-                "MMU Data Notification " + DateTime.Now.ToString("dd/MM/yyyy"),
+            MailMessage message = new MailMessage("s2@agnortheast.com", "S.Sumpton@agnortheast.com; s.kent@agnortheast.com; a.granger@agnortheast.com",
+            "MMU Data Notification " + DateTime.Now.ToString("dd/MM/yyyy"),
                 "MMU Offer Guide Quantities <br /> <br />" + "Number of UK: " + UK + "<br />" + "Number of Non-UK: " + NONUK + "<br />" + "--------------------------------------");
             message.IsBodyHtml = true;
             SmtpClient client = new SmtpClient("6.1.1.143");
-            client.Send(message);          
-          
+            client.Send(message);
+
 
         }
     }
 }
+
+
