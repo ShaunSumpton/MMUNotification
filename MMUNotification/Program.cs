@@ -26,7 +26,7 @@ namespace MMUNotification
             _ = ws.UsedRange.Columns.Count;
             Range last = ws.Cells.SpecialCells(XlCellType.xlCellTypeLastCell, Type.Missing);
             _ = ws.get_Range("A1", last);
-            Range uknot = ws.Columns["P"]; // column to count UK or NON UK sends
+            Range uknot = ws.Columns["Q"]; // column to count UK or NON UK sends
             _ = last.Row;
 
             var UK = application.WorksheetFunction.CountIf(uknot, "UK"); // count uk sends
